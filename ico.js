@@ -1,4 +1,11 @@
+//-------------------------------------------------------------
+//-----------------Do not edit the XML tags--------------------
+//-------------------------------------------------------------
 
+//<Document-Level>
+//<ACRO_source>CustomJavaScript</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: Document-Level:CustomJavaScript ***********/
 function CustomJavaScript()
 {
 	FC_NUMBER_VALIDATION_RE = /^-?(?:\d+(?:\.\d*)?|\.\d+)$/;
@@ -429,7 +436,8 @@ function onDocOpen()
    var fld = this.getField('fc-int01-generateAppearances');
    if (fld && fld.value == 'TRUE')
    {
-      this.resetForm();
+      //this.resetForm();
+
       fld.value = 'FALSE';
       this.dirty = false;
        resetToStart();
@@ -499,6 +507,52 @@ var lineTotal = this.getField('bill\.LineTotal');
 var transNumSource = this.getField('bill\.TransNumSource');
 var transType = this.getField('bill\.TransType');
 var advarr = this.getField('bill\.AdvArrears');
+var revAcctMethod = this.getField('bill\.RevAcctMethod');
+var revRecogStart = this.getField('bill\.RevRecogStart');
+var revRecogEnd = this.getField('bill\.RevRecogEnd');
+var serviceStart = this.getField('bill\.ServiceStart');
+var serviceEnd = this.getField('bill\.ServiceEnd')
+
+var btnAdd2 = this.getField('AddLine2');
+var btnAdd3 = this.getField('AddLine3');
+var btnAdd4 = this.getField('AddLine4');
+var btnAdd5 = this.getField('AddLine5');
+var btnRmv2 = this.getField('RmvLine2');
+var btnRmv3 = this.getField('RmvLine3');
+var btnRmv4 = this.getField('RmvLine4');
+var btnRmv5 = this.getField('RmvLine5');
+
+// additional invoice lines
+var lineNum2 = this.getField('bill\.LineNumber2');
+var lineDesc2 = this.getField('bill\.LineDescr2');
+var qty2 = this.getField('bill\.Qty2');
+var unitPrice2 = this.getField('bill\.UnitPrice2');
+var lineTotal2 = this.getField('bill\.LineTotal2');
+
+var lineNum3 = this.getField('bill\.LineNumber3');
+var lineDesc3 = this.getField('bill\.LineDescr3');
+var qty3 = this.getField('bill\.Qty3');
+var unitPrice3 = this.getField('bill\.UnitPrice3');
+var lineTotal3 = this.getField('bill\.LineTotal3');
+
+var lineNum4 = this.getField('bill\.LineNumber4');
+var lineDesc4 = this.getField('bill\.LineDescr4');
+var qty4 = this.getField('bill\.Qty4');
+var unitPrice4 = this.getField('bill\.UnitPrice4');
+var lineTotal4 = this.getField('bill\.LineTotal4');
+
+var lineNum5 = this.getField('bill\.LineNumber5');
+var lineDesc5 = this.getField('bill\.LineDescr5');
+var qty5 = this.getField('bill\.Qty5');
+var unitPrice5 = this.getField('bill\.UnitPrice5');
+var lineTotal5 = this.getField('bill\.LineTotal5');
+
+
+var itemCode2 = this.getField('bill\.ItemCode2');
+var itemCode3 = this.getField('bill\.ItemCode3');
+var itemCode4 = this.getField('bill\.ItemCode4');
+var itemCode5 = this.getField('bill\.ItemCode5');
+
 
 /**********************************GLOBAL CUSTOM FUNCTIONS*************************************************************************************/
 
@@ -532,7 +586,7 @@ function resetToStart()
 	firstName.required = true;
 	commType.required = true;
 	legalEntity.required = true;
-	altCustName.required = true;
+	altCustName.required = false;
 	salesperson.required = true;
 	lineNum.required = true;
 	itemCode.required = true;
@@ -544,6 +598,67 @@ function resetToStart()
 	address4.readonly = false;
 	advarr.required = false;
 	advarr.readonly = true;
+
+  //additional lines
+
+  lineNum2.readonly = true;
+  lineNum3.readonly = true;
+  lineNum4.readonly = true;
+  lineNum5.readonly = true;
+  itemCode2.readonly = true;
+  itemCode3.readonly = true;
+  itemCode4.readonly = true;
+  itemCode5.readonly = true;
+  lineDesc2.readonly = true;
+  lineDesc3.readonly = true;
+  lineDesc4.readonly = true;
+  lineDesc5.readonly = true;
+  qty2.readonly = true;
+  qty3.readonly = true;
+  qty4.readonly = true;
+  qty5.readonly = true;
+  unitPrice2.readonly = true;
+  unitPrice3.readonly = true;
+  unitPrice4.readonly = true;
+  unitPrice5.readonly = true;
+  lineTotal2.readonly = true;
+  lineTotal3.readonly = true;
+  lineTotal4.readonly = true;
+  lineTotal5.readonly = true;
+
+  lineNum2.required = false;
+  lineNum3.required = false;
+  lineNum4.required = false;
+  lineNum5.required = false;
+  itemCode2.required = false;
+  itemCode3.required = false;
+  itemCode4.required = false;
+  itemCode5.required = false;
+  lineDesc2.required = false;
+  lineDesc3.required = false;
+  lineDesc4.required = false;
+  lineDesc5.required = false;
+  qty2.required = false;
+  qty3.required = false;
+  qty4.required = false;
+  qty5.required = false;
+  unitPrice2.required = false;
+  unitPrice3.required = false;
+  unitPrice4.required = false;
+  unitPrice5.required = false;
+  lineTotal2.required = false;
+  lineTotal3.required = false;
+  lineTotal4.required = false;
+  lineTotal5.required = false;
+
+	btnAdd2.display = display.visible
+	btnAdd3.display = display.visible
+	btnAdd4.display = display.visible
+	btnAdd5.display = display.visible
+	btnRmv2.display = display.hidden;
+	btnRmv3.display = display.hidden;
+	btnRmv4.display = display.hidden;
+	btnRmv5.display = display.hidden;
 
 	//set initial values
 	setLegalEntity();
@@ -626,6 +741,9 @@ function setFieldValues()
 	currency = billCurrency.value;
 	payTerms = paymentTerms.value;
 	lineDesc = itemCode.value;
+	revAcctMethod = "Daily Revenue, Monthly";
+	revRecogStart = serviceStart.value;
+	revRecogEnd = serviceEnd.value;
 
 }
 
@@ -633,12 +751,12 @@ function setFieldValues()
 
 function setState()
 {
+var f = state;
   if(country.value == "US"){
-  var f = state;
-  f.setItems([" ","AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ",
-  "NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WV","WI","WY"]);
+	var stateOptions = [" ","AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ",
+  "NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WV","WI","WY"];
+  f.setItems(stateOptions);
   } else {
-    var f = state;
     f.setItems([""]);
   }
 }
@@ -660,6 +778,10 @@ function setLegalEntity()
 	{
 		var f = legalEntity;
 		f.setItems(["Egencia Canada Corp"]);
+	}
+	else if (OU.value == "11586 AAE Pte Ltd"){
+		var f = legalEntity;
+		f.setItems(["11586 AAE Pte Ltd"]);
 	}
 	else
 	{
@@ -697,6 +819,10 @@ function setTransNumSource()
 	{
 		var f = transNumSource;
 		f.setItems(["EGCA_SOURCE_AUTO"]);
+	}
+	else if (legalEntity.value == "11586 AAE Pte Ltd") {
+		var f = transNumSource;
+		f.setItems(["AAES_SOURCE_AUTO"]);
 	}
 	else
 	{
@@ -738,6 +864,9 @@ function setTransType()
 	{
 		f.setItems([" ","EGC_INV_CT"]);
 	}
+	else if (transNumSource.value == "AAES_SOURCE_AUTO"){
+		f.setItems(["","AAE_INV_ANC_AIR_COMM","AAE_INV_AIR_COMM","AAE_INV_COUP_PROMO","AAE_INV_CAR_RENTAL"]);
+	}
 	else
 	{
 		f.setItems([""]);
@@ -748,13 +877,12 @@ function setTransType()
 function resetItemCode()
 {
 	var f = itemCode;
-f.setItems([""]);
+  f.setItems([""]);
 }
 
 function itemCode1()
 {
-	var f = itemCode;
-	f.setItems(["APAC_AD_CVB","AU_AD_CAR","AU_AD_FEE","CITI_MKTFUND","COUPONS_AMEX","CR_CLEARING_NAV","CR_DE_AD_CAR","CR_EMEA_AD_CAR","CR_FR_AD_CAR","CR_KYK_AD_CAR","CR_MFCLEARING",
+	var itemCodeSelections1 = [" ","APAC_AD_CVB","AU_AD_CAR","AU_AD_FEE","CITI_MKTFUND","COUPONS_AMEX","CR_CLEARING_NAV","CR_DE_AD_CAR","CR_EMEA_AD_CAR","CR_FR_AD_CAR","CR_KYK_AD_CAR","CR_MFCLEARING",
 				"CR_OVERRIDE_REV","CR_US_AD_CAR","DOMAGNCYAR","EG_MISCREV","EG_REIMBURSE_COOLEY","EG_REIMBURSE_DUKE_ENERGY","EG_REIMBURSE_EVERCORE","EG_REIMBURSE_INTEL_VENTURE","EG_REIMBURSE_JONES_LANG",
 				"EG_REIMBURSE_LENOVO","EG_REIMBURSE_MANPOWER","EG_REIMBURSE_NEFLIX","EG_REIMBURSE_NEWELL_BRANDS","EG_REIMBURSE_RUSSELL","EG_REIMBURSE_WILLIAMS_CO","EG_REIMBURSE_WORKDAY","ELE_DS_EMB_SUITES",
 				"ELE_RC_EMB_SUITES","EMEA_NL_FEE","EXPWA_AARP","EXPWA_AARP_MF_REIM","EXPWA_AGENCY_CAR","EXPWA_AGENCY_CAR_OVR","EXPWA_AIRMILE_COUPON","EXPWA_AMADEUS","EXPWA_AMADEUS_UK_ADM","EXPWA_AU_SEM_CRS",
@@ -864,54 +992,541 @@ function itemCode1()
 				"TVLY_CA_AD_CRSE","TVLY_CA_AD_CRSE_IMP","TVLY_CA_AD_CVB","TVLY_CA_AD_CVB_IMP","TVLY_CA_AD_DSVC","TVLY_CA_AD_DSVC_IMP","TVLY_CA_AD_EML","TVLY_CA_AD_EML_IMP","TVLY_CA_AD_HOTL","TVLY_CA_AD_HOTL_IMP","TVLY_CA_AD_NON","TVLY_CA_AD_NON_IMP","TVLY_CA_AD_OTH","TVLY_CA_AD_OTH_IMP","TVLY_CA_AD_TSHP","TVLY_CA_TRVLAD",
 				"TVLY_MF_CA_AD_AIR","TVLY_MF_CA_AD_CAR","TVLY_MF_CA_AD_CRSE","TVLY_MF_CA_AD_CVB","TVLY_MF_CA_AD_DSVC","TVLY_MF_CA_AD_EML","TVLY_MF_CA_AD_EML_IMP","TVLY_MF_CA_AD_HOTL","TVLY_MF_CA_AD_OTH","TVLY_MF_CA_NON","TVLY_MF_US_AD_AIR","TVLY_MF_US_AD_CAR","TVLY_MF_US_AD_CRSE","TVLY_MF_US_AD_CVB","TVLY_MF_US_AD_DSVC",
 				"TVLY_MF_US_AD_EML","TVLY_MF_US_AD_EML_IMP","TVLY_MF_US_AD_HOTL","TVLY_MF_US_AD_NON","TVLY_MF_US_AD_OTH","TVLY_US_AD_AIR","TVLY_US_AD_AIR_IMP","TVLY_US_AD_CAR","TVLY_US_AD_CAR_IMP","TVLY_US_AD_CRSE","TVLY_US_AD_CRSE_IMP","TVLY_US_AD_CVB","TVLY_US_AD_CVB_IMP","TVLY_US_AD_DSVC","TVLY_US_AD_DSVC_IMP",
-				"TVLY_US_AD_EML","TVLY_US_AD_EML_IMP","TVLY_US_AD_HOTL","TVLY_US_AD_HOTL_IMP","TVLY_US_AD_NON","TVLY_US_AD_NON_IMP","TVLY_US_AD_OTH","TVLY_US_AD_OTH_IMP","TVLY_US_AD_TSHP","TVLY_US_TRVLAD","VSC_PHONE","XSV_82103"])
+				"TVLY_US_AD_EML","TVLY_US_AD_EML_IMP","TVLY_US_AD_HOTL","TVLY_US_AD_HOTL_IMP","TVLY_US_AD_NON","TVLY_US_AD_NON_IMP","TVLY_US_AD_OTH","TVLY_US_AD_OTH_IMP","TVLY_US_AD_TSHP","TVLY_US_TRVLAD","VSC_PHONE","XSV_82103"];
+
+				itemCode.setItems(itemCodeSelections1);
+				itemCode2.setItems(itemCodeSelections1);
+				itemCode3.setItems(itemCodeSelections1);
+				itemCode4.setItems(itemCodeSelections1);
+				itemCode5.setItems(itemCodeSelections1);
+}
+//debugger;
+function setItemCode2()
+{
+
+	var itemCodeSelections2 = [" ","TS_EAC_BOOK","TS_EAC_GR_AAGo","TS_EAC_GR_AMER","TS_EAC_GR_APAC","TS_EAC_GR_EMEA","TS_EAC_GR_LATAM","TS_EAC_STAY"];
+
+	itemCode.setItems(itemCodeSelections2);
+	itemCode2.setItems(itemCodeSelections2);
+	itemCode3.setItems(itemCodeSelections2);
+	itemCode4.setItems(itemCodeSelections2);
+	itemCode5.setItems(itemCodeSelections2);
+
 }
 
-function itemCode2()
+function setItemCode3()
 {
-	var f = itemCode;
-	f.setItems(["TS_EAC_BOOK","TS_EAC_GR_AAGo","TS_EAC_GR_AMER","TS_EAC_GR_APAC","TS_EAC_GR_EMEA","TS_EAC_GR_LATAM","TS_EAC_STAY"])
+
+	var itemCodeSelections3 = [" ","TS_ELONG_MS_AIR","TS_ELONG_MS_CAR","TS_ELONG_MS_CRSE","TS_ELONG_MS_CVB","TS_ELONG_MS_DSVC","TS_ELONG_MS_EML","TS_ELONG_MS_EML_IMP","TS_ELONG_MS_HOTL","TS_ELONG_MS_NON","TS_ELONG_MS_OTH"];
+	itemCode.setItems(itemCodeSelections3);
+	itemCode2.setItems(itemCodeSelections3);
+	itemCode3.setItems(itemCodeSelections3);
+	itemCode4.setItems(itemCodeSelections3);
+	itemCode5.setItems(itemCodeSelections3);
 }
 
-function itemCode3()
+function setItemCode4()
 {
-	var f = itemCode;
-	f.setItems(["TS_ELONG_MS_AIR","TS_ELONG_MS_CAR","TS_ELONG_MS_CRSE","TS_ELONG_MS_CVB","TS_ELONG_MS_DSVC","TS_ELONG_MS_EML","TS_ELONG_MS_EML_IMP","TS_ELONG_MS_HOTL","TS_ELONG_MS_NON","TS_ELONG_MS_OTH"])
+
+	var itemCodeSelections4 = [" ","TS_RP_AU_AD_OTH_IMP","TS_RP_CA_AD_NON","TS_RP_CA_AD_OTH","TS_RP_CA_AD_OTH_IMP","TS_RP_UK_AD_OTH","TS_RP_UK_AD_OTH_IMP","TS_RP_USADNON","TS_RP_USADOTH","TS_RP_US_AD_OTH_IMP"]
+	itemCode.setItems(itemCodeSelections4);
+	itemCode2.setItems(itemCodeSelections4);
+	itemCode3.setItems(itemCodeSelections4);
+	itemCode4.setItems(itemCodeSelections4);
+	itemCode5.setItems(itemCodeSelections4);
 }
 
-function itemCode4()
+function setItemCode5()
 {
-	var f = itemCode;
-	f.setItems(["TS_RP_AU_AD_OTH_IMP","TS_RP_CA_AD_NON","TS_RP_CA_AD_OTH","TS_RP_CA_AD_OTH_IMP","TS_RP_UK_AD_OTH","TS_RP_UK_AD_OTH_IMP","TS_RP_USADNON","TS_RP_USADOTH","TS_RP_US_AD_OTH_IMP"])
-}
 
-function itemCode5()
-{
-	var f = itemCode;
-	f.setItems(["TS_US_TRVLAD"])
+	var itemCodeSelections5 = [" ","TS_US_TRVLAD"];
+	itemCode.setItems(itemCodeSelections5);
+	itemCode2.setItems(itemCodeSelections5);
+	itemCode3.setItems(itemCodeSelections5);
+	itemCode4.setItems(itemCodeSelections5);
+	itemCode5.setItems(itemCodeSelections5);
 }
 
 function itemCode6()
 {
-	var f = itemCode;
-	f.setItems(["TS_VST_BILLING"])
+
+	var itemCodeSelections6 = [" ","TS_VST_BILLING"];
+	itemCode.setItems(itemCodeSelections6);
+	itemCode2.setItems(itemCodeSelections6);
+	itemCode3.setItems(itemCodeSelections6);
+	itemCode4.setItems(itemCodeSelections6);
+	itemCode5.setItems(itemCodeSelections6);
 }
 
 function itemCode7()
 {
-	var f = itemCode;
-	f.setItems(["EGA_TRAN_FEE","EGMIU_PLAN_FEES","EG_AD_AIR","EG_AD_CAR","EG_AD_HOT","EG_AD_MISC","EG_AGENT","EG_AIR_CONTRACT","EG_ANNUAL_FEE","EG_BULK_DATA","EG_CA_AD_HOT","EG_CC_RECON","EG_CONTRA_SALARY","EG_CUSTOM-REPORTS","EG_EARLY_TERM","EG_ESS_ANN_FEE","EG_HOTEL_CONTRACT","EG_MFCLEARING",
+
+	var itemCodeSelections7 = [" ","EGA_TRAN_FEE","EGMIU_PLAN_FEES","EG_AD_AIR","EG_AD_CAR","EG_AD_HOT","EG_AD_MISC","EG_AGENT","EG_AIR_CONTRACT","EG_ANNUAL_FEE","EG_BULK_DATA","EG_CA_AD_HOT","EG_CC_RECON","EG_CONTRA_SALARY","EG_CUSTOM-REPORTS","EG_EARLY_TERM","EG_ESS_ANN_FEE","EG_HOTEL_CONTRACT","EG_MFCLEARING",
 				"EG_MISC","EG_MIU_AAB","EG_MIU_AGENT_LABOR","EG_MIU_AH","EG_MIU_AHCO_FEE","EG_MIU_ANALYSIS","EG_MIU_ATTLOAD","EG_MIU_CRPTS","EG_MIU_DEPOSIT","EG_MIU_EVENT","EG_MIU_GIFTCERT","EG_MIU_ONCALL","EG_MIU_ONSITE","EG_MIU_PLAN_FEES","EG_MIU_PROFILE","EG_MIU_REG_FEES","EG_MIU_SPRTS","EG_MIU_TRAN_FEES",
 				"EG_PROFILE","EG_RED24","EG_REIMBURSE_ACTELION","EG_REIMBURSE_BAIN","EG_REIMBURSE_COOLEY","EG_REIMBURSE_DUKE_ENERGY","EG_REIMBURSE_EISAI","EG_REIMBURSE_EVERCORE","EG_REIMBURSE_FAIR_ISAAC","EG_REIMBURSE_FLOWSERVE","EG_REIMBURSE_HERSHEY","EG_REIMBURSE_HILTI","EG_REIMBURSE_HOUGHTON",
 				"EG_REIMBURSE_HSBC","EG_REIMBURSE_IMG_WORLDWIDE","EG_REIMBURSE_INTEL_VENTURE","EG_REIMBURSE_JONES_LANG","EG_REIMBURSE_KAR","EG_REIMBURSE_LAS_VEGAS","EG_REIMBURSE_LENOVO","EG_REIMBURSE_MANPOWER","EG_REIMBURSE_MCDERMOTT","EG_REIMBURSE_MONSTER","EG_REIMBURSE_NEFLIX","EG_REIMBURSE_NEWELL_BRANDS",
 				"EG_REIMBURSE_RUSSELL","EG_REIMBURSE_SCHREIBER","EG_REIMBURSE_TOP_RANK","EG_REIMBURSE_T_ROWE_PRICE","EG_REIMBURSE_WILLIAMS_CO","EG_REIMBURSE_WILLIAM_BLAIR","EG_REIMBURSE_WORKDAY","EG_REIMBURSE_WW_GRAINGER","EG_REPORTS","EG_SOS","EG_STD_ANN_FEE","EG_TRAN_FEE","EG_TRAN_FEE_REB","EG_US_CONSULTING",
 				"EG_US_DELTA_DUPES","EG_US_MFCLEARING","EG_US_MFCUSTPDCA","EG_US_MFCUSTPDUS","EG_US_MFUSAIR","EG_US_SLA_CREDIT","EG_US_SSO_SETUP","EG_US_SWA_SURCHARGE","FURNITURE CAPITAL","LEASEHOLD IMPROVEMENT","NETWORK CAPITAL","NETWORK COMPONENT","NETWORK SOFTWARE","OFFICE EQUIPMENT","PC DESKTOP","PC LAPTOP",
-				"SAN CAPITAL","SAN COMPONENT","SAN SOFTWARE","SERVER CAPITAL","SERVER COMPONENT","SERVER SOFTWARE","SOFTWARE CAPITAL","TELECOM CAPITAL","TELECOM PERIPHERAL"])
+				"SAN CAPITAL","SAN COMPONENT","SAN SOFTWARE","SERVER CAPITAL","SERVER COMPONENT","SERVER SOFTWARE","SOFTWARE CAPITAL","TELECOM CAPITAL","TELECOM PERIPHERAL"];
+	itemCode.setItems(itemCodeSelections7);
+	itemCode2.setItems(itemCodeSelections7);
+	itemCode3.setItems(itemCodeSelections7);
+	itemCode4.setItems(itemCodeSelections7);
+	itemCode5.setItems(itemCodeSelections7);
+}
+
+function itemCode8(){
+	var itemCodeSelections8 = [" ","AAE_ANC_AIR_COMM_SA","AAE_AIR_COMM_SA","AAE_COUP_PROMO_MER_HOTEL_SA_HK","AAE_COUP_PROMO_MER_HOTEL_SA_SG","AAE_COUP_PROMO_MER_HOTEL_SA_SK","AAE_CAR_RENTAL_3RD_PARTY"];
+	// var itemCode = this.getField('bill\.ItemCode');
+	itemCode.setItems(itemCodeSelections8);
+	itemCode2.setItems(itemCodeSelections8);
+	itemCode3.setItems(itemCodeSelections8);
+	itemCode4.setItems(itemCodeSelections8);
+	itemCode5.setItems(itemCodeSelections8);
 }
 
 //function to calculate total amount due
 function calculateTotal()
 {
-	var sum = qty.value * unitPrice.value;
-	lineTotal.value = sum;
+	lineTotal.value = qty.value * unitPrice.value;
 }
+
+function calculateTotal2()
+{
+	lineTotal2.value = qty2.value * unitPrice2.value;
+}
+
+function calculateTotal3()
+{
+	lineTotal3.value = qty3.value * unitPrice3.value;
+}
+
+function calculateTotal4()
+{
+	lineTotal4.value = qty4.value * unitPrice4.value;
+}
+
+function calculateTotal5()
+{
+	lineTotal5.value = qty5.value * unitPrice5.value;
+}
+
+
+//</ACRO_script>
+//</Document-Level>
+
+//<AcroForm>
+//<ACRO_source>Finish:Annot1:MouseUp:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:Finish:Annot1:MouseUp:Action1 ***********/
+//these functions verify that the form is complete and prompt for email
+//variables
+
+
+function checkForm(){
+var formIsComplete = true;
+setFieldValues();
+
+//check to see if form is complete
+for (var n=0; n<this.numFields; n++)
+{
+    var fieldName = this.getNthFieldName(n);
+    var f = this.getField(fieldName);
+
+    if (f != null && f.type != "button" && f.required == true && (f.value == "" || f.value == " "))
+    {
+        app.alert("Please complete the required fields. All required fields are outlined in RED. If you do not" +
+            " see outlines, please make sure \"Highlight Existing Fields\" is turned on in this form.",1,0,"REQUIRED");
+        formIsComplete = false;
+        f.setFocus();
+        break;
+    }
+}
+
+//validate fields, set to read-only and prompt for email
+
+if (formIsComplete)
+{
+	var cToAddr = "arcustomersetup@expedia.com";
+	var cSubLine = "New Account Setup"
+	var cBody = "";
+
+    try
+    {
+        if (app.alert({cMsg: "Are you finished with the form? Click YES to email",nIcon: 2, nType: 3}) == 4)
+        {
+      this.flattenPages();
+			mailDoc({
+				bUI:true,
+				cTo:cToAddr,
+				cSubject:cSubLine,
+				cMsg:cBody
+			});
+
+        }
+    }
+    catch (e)
+    {
+        app.alert("The email did not send. Please save the form and email to arcustomersetup@expedia directly.");
+    }
+
+}
+}
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>Reset:Annot1:MouseUp:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:Reset:Annot1:MouseUp:Action1 ***********/
+resetToStart();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.AddEmailAddress:Format</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.AddEmailAddress:Format ***********/
+function validateBillEmail(){
+var email = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/; if (event.value!=""){if (!email.test(event.value)){event.rc = false;app.alert("\"" + event.value + "\" is not a valid email address.");};};
+}
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.IONumber:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.IONumber:Annot1:OnBlur:Action1 ***********/
+
+if (IOnum.value == "")
+{
+	advarr.required = false;
+	advarr.readonly = true;
+	serviceStart.required = false;
+	serviceEnd.required = false;
+}
+else
+{
+	serviceStart.required = true;
+	serviceEnd.required = true;
+	advarr.required = true;
+	advarr.readonly = false;
+	advarr.setItems(["","In Advance", "In Arrears"]);
+}
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.LegalEntity:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.LegalEntity:Annot1:OnBlur:Action1 ***********/
+setTransNumSource();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.TransNumSource:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.TransNumSource:Annot1:OnBlur:Action1 ***********/
+setTransType();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.TransType:Keystroke</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.TransType:Keystroke ***********/
+switch (event.changeEx)
+{
+	//all the cases will fall through to the same results
+	case "EXP_INV_NT":
+	case "EXP_INV_RP":
+	case "EXP_INV_SO":
+	case "HOT_INV_ADV":
+	case "HOT_INV_ADV_MF":
+	case "HOT_INV_ADV_MF_EX":
+	case "HOT_INV_NT":
+	case "HOT_INV_SO":
+	case "HOTW_INV_ADV":
+	case "HOTW_INV_ADV_MF":
+	case "HOTW_INV_ADV_MF_EX":
+	case "HOTW_INV_NT":
+	case "HOTW_INV_SO":
+	case "TS_INV_ADV":
+	case "TS_INV_ADV_MF":
+	case "TS_INV_ADV_MF_EX":
+	case "TS_INV_NT":
+	case "TS_INV_SO":
+		itemCode1();
+		break;
+	case "TS_INV_EAC":
+		setItemCode2();
+		break;
+	case "TS_INV_ELONG_IC":
+		setItemCode3();
+		break;
+	case "TS_INV_RP":
+		setItemCode4();
+		break;
+	case "TS_INV_TA":
+		setItemCode5();
+		break;
+	case "TS_VST_BILLING":
+		itemCode6();
+		break;
+	case "EG_INV_ADV":
+	case "EG_INV_ADV_MF":
+	case "EG_INV_ADV_MF_EX":
+	case "EG_INV_CT":
+	case "EGC_INV_CT":
+		itemCode7();
+		break;
+	case "AAE_INV_ANC_AIR_COMM":
+	case "AAE_INV_AIR_COMM":
+	case "AAE_INV_COUP_PROMO":
+	case "AAE_INV_CAR_RENTAL":
+		itemCode8();
+		break;
+}
+
+// line control function
+// due to a glitch, itemCode variables had to be declared inside each statement
+
+
+function buttonControl(event){
+  switch(event.targetName){
+    case 'AddLine2':
+			var itemCode2 = this.getField('bill\.ItemCode2');
+      btnAdd2.display = display.hidden;
+      btnRmv2.display = display.visible;
+
+      lineNum2.readonly = false;
+      itemCode2.readonly = false;
+      qty2.readonly = false;
+      unitPrice2.readonly = false;
+      lineNum2.required = true;
+      itemCode2.required = true;
+      qty2.required = true;
+      unitPrice2.required = true;
+      break;
+    case 'AddLine3':
+			var itemCode3 = this.getField('bill\.ItemCode3');
+      btnAdd3.display = display.hidden;
+      btnRmv3.display = display.visible;
+
+      lineNum3.readonly = false;
+      itemCode3.readonly = false;
+      qty3.readonly = false;
+      unitPrice3.readonly = false;
+      lineNum3.required = true;
+      itemCode3.required = true;
+      qty3.required = true;
+      unitPrice3.required = true;
+      break;
+    case 'AddLine4':
+			var itemCode4 = this.getField('bill\.ItemCode4');
+      btnAdd4.display = display.hidden;
+      btnRmv4.display = display.visible;
+
+      lineNum4.readonly = false;
+      itemCode4.readonly = false;
+      qty4.readonly = false;
+      unitPrice4.readonly = false;
+      lineNum4.required = true;
+      itemCode4.required = true;
+      qty4.required = true;
+      unitPrice4.required = true;
+      break;
+    case 'AddLine5':
+			var itemCode5 = this.getField('bill\.ItemCode5');
+      btnAdd5.display = display.hidden;
+      btnRmv5.display = display.visible;
+
+      lineNum5.readonly = false;
+      itemCode5.readonly = false;
+      qty5.readonly = false;
+      unitPrice5.readonly = false;
+      lineNum5.required = true;
+      itemCode5.required = true;
+      qty2.required = true;
+      unitPrice5.required = true;
+      break;
+    case 'RmvLine2':
+		var itemCode2 = this.getField('bill\.ItemCode2');
+      btnAdd2.display = display.visible;
+      btnRmv2.display = display.hidden;
+
+      lineNum2.readonly = true;
+      itemCode2.readonly = true;
+      qty2.readonly = true;
+      unitPrice2.readonly = true;
+
+      lineNum2.required = false;
+      itemCode2.required = false;
+      qty2.required = false;
+      unitPrice2.required = false;
+
+      lineNum2.value = '';
+      itemCode2.setItems([""]);
+      qty2.value = '';
+      unitPrice2.value = '';
+      lineTotal2.value = '';
+      break;
+
+    case 'RmvLine3':
+			var itemCode3 = this.getField('bill\.ItemCode3');
+      btnAdd3.display = display.visible;
+      btnRmv3.display = display.hidden;
+
+      lineNum3.readonly = true;
+      itemCode3.readonly = true;
+      qty3.readonly = true;
+      unitPrice3.readonly = true;
+
+      lineNum3.required = false;
+      itemCode3.required = false;
+      qty3.required = false;
+      unitPrice3.required = false;
+
+      lineNum3.value = '';
+      itemCode3.setItems([""]);
+      qty3.value = '';
+      unitPrice3.value = '';
+      lineTotal3.value = '';
+      break;
+
+    case 'RmvLine4':
+			var itemCode4 = this.getField('bill\.ItemCode4');
+      btnAdd4.display = display.visible;
+      btnRmv4.display = display.hidden;
+
+      lineNum4.readonly = true;
+      itemCode4.readonly = true;
+      qty4.readonly = true;
+      unitPrice4.readonly = true;
+
+      lineNum4.required = false;
+      itemCode4.required = false;
+      qty4.required = false;
+      unitPrice4.required = false;
+
+      lineNum4.value = '';
+      itemCode4.setItems([""]);
+      qty4.value = '';
+      unitPrice4.value = '';
+      lineTotal4.value = '';
+      break;
+
+    case 'RmvLine5':
+			var itemCode5 = this.getField('bill\.ItemCode5');
+      btnAdd5.display = display.visible;
+      btnRmv5.display = display.hidden;
+
+      lineNum5.readonly = true;
+      itemCode5.readonly = true;
+      qty5.readonly = true;
+      unitPrice5.readonly = true;
+
+      lineNum5.required = false;
+      itemCode5.required = false;
+      qty5.required = false;
+      unitPrice5.required = false;
+
+      lineNum5.value = '';
+      itemCode5.setItems([""]);
+      qty5.value = '';
+      unitPrice5.value = '';
+      lineTotal5.value = '';
+      break;
+  }
+}
+
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.UnitPrice:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.UnitPrice:Annot1:OnBlur:Action1 ***********/
+calculateTotal();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.UnitPrice2:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.UnitPrice2:Annot1:OnBlur:Action1 ***********/
+calculateTotal2();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.UnitPrice3:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.UnitPrice3:Annot1:OnBlur:Action1 ***********/
+calculateTotal3();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.UnitPrice4:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.UnitPrice4:Annot1:OnBlur:Action1 ***********/
+calculateTotal4();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>bill.UnitPrice5:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:bill.UnitPrice5:Annot1:OnBlur:Action1 ***********/
+calculateTotal5();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>pm.Classification:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:pm.Classification:Annot1:OnBlur:Action1 ***********/
+classify();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>pm.ContactEmail:Format</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:pm.ContactEmail:Format ***********/
+function validateEmail(){
+var email = /^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/; if (event.value!=""){if (!email.test(event.value)){event.rc = false;app.alert("\"" + event.value + "\" is not a valid email address.");};};
+}
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>pm.CountryDD:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:pm.CountryDD:Annot1:OnBlur:Action1 ***********/
+countryProperties();
+
+//</ACRO_script>
+//</AcroForm>
+
+//<AcroForm>
+//<ACRO_source>pm.OUAssign:Annot1:OnBlur:Action1</ACRO_source>
+//<ACRO_script>
+/*********** belongs to: AcroForm:pm.OUAssign:Annot1:OnBlur:Action1 ***********/
+setLegalEntity();
+
+//</ACRO_script>
+//</AcroForm>

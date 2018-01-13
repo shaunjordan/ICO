@@ -1,5 +1,6 @@
 {
     // blank template
+    //TODO: delete all comments and empty values
     "paymentOpts": {
         "option1": []
     },
@@ -11,14 +12,14 @@
     },
     // end blank template
     "Aland Islands":{
-        "ddFormLink":"", //sepa
+        "ddFormLink":""
         "currency": ["EUR"],
         "paymentMethods": ["Credit Card","Direct Debit","Wire"],
         "iso_2": "AX"
     },
     "Albania":{
-        "ddFormLink":"",
-        "currency": ["EUR","GBP","USD"],
+        "ddFormLink":"none",
+        "currency": [" ","EUR","GBP","USD"],
         "paymentMethods": ["Credit Card","Wire"],
         "iso_2": "AL"
     },
@@ -261,120 +262,288 @@
         "paymentMethods": ["Credit Card","Wire"],
         "iso_2":"CV"
     },
-     "Congo DR (Zaire)":{
+    "Cayman Islands":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KY"
+    },
+    "Chile":{
+        //Samoa
+       "ddFormLink":"",
+       "currency": [],
+       "paymentMethods": [],
+       "iso_2":"CL"
+   },
+   "China":{
+    "ddFormLink":"",
+    "currency": ["CNY","EUR","GBP","USD"],
+    "paymentMethods": ["Credit Card","Wire"],
+    "iso_2":"CN"
+    },
+    "Christmas Island":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CX"
+    },
+    "Cocos (Keeling) Island":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CC"
+    },
+    "Colombia":{
+        //Samoa
+        "ddFormLink":"",
+        "currency": [],
+        "paymentMethods": [],
+        "iso_2":"CO"
+    },
+    "Congo DR (Zaire)":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CD"
+    },
+    "Cook Islands":{
+        //Samoa
+        "ddFormLink":"",
+        "currency": [],
+        "paymentMethods": [],
+        "iso_2":"CK"
+    },
+    "Costa Rica":{
+        //Samoa
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": ["Credit","Credit Card"],
+        "iso_2":"CR"
+    },
+    "Cote d'Ivorie (Ivory Coast)":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CI"
+    },
+    "Croatia":{
+        "ddFormLink":"",
+        "currency": ["EUR","HRK"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"HR"
+    },
+    "Curacao":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CW"
+    },
+    "Cyprus":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"CY"
+    },
+    "Czech Republic":{
+        "ddFormLink":"",
+        "currency": ["CZK","EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"CZ"
+    },
+    "Denmark":{
+        "ddFormLink":"",
+        "currency": ["DKK","EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"DK"
+    },
+    "Dominica":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"DM"
+    },
+    "Dominican Republic":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"DO"
+    },
+    "Ecuador":{
+        //Samoa
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": ["Credit Card"],
+        "iso_2":"EC"
+    },
+    "Egypt":{
+        //Samoa
         "ddFormLink":"",
         "currency": [],
         "paymentMethods": []
     },
-     "Cote d\'Ivorie (Ivory Coast)":{
+    "Egypt":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SV"
     },
-     "Croatia":{
+    "Eritrea":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Cyprus":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Czech Republic":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Denmark":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Egypt":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Eritrea":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ER"
     },
      "Estonia":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"EE"
+    },
+    "Falkland Islands (Malvinas)":{
+        "ddFormLink":"",
+        "currency": [" ","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"FK"
     },
      "Faroe Islands":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["DKK","EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"FO"
     },
-     "Finland":{
+    "Fiji":{
+        //Samoa
         "ddFormLink":"",
         "currency": [],
         "paymentMethods": []
     },
-     "France":{
+    "Finland":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"FI"
     },
-     "French Southern Territories":{
+    "France":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"FR"
     },
-     "Gambia":{
+    "French Guiana":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"GF"
     },
-     "Georgia":{
+    "French Polynesia":{
+        //Samoa
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"PF"
     },
-     "Germany":{
+    "French Southern Territories":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TF"
     },
-     "Ghana":{
+    "Gambia":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GM"
     },
-     "Gibraltar":{
+    "Georgia":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GE"
     },
-     "Greece":{
+    "Germany":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"DE"
     },
-     "Greenland":{
+    "Ghana":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GH"
     },
-     "Guernsey":{
+    "Gibraltar":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"GI"
     },
-     "Guinea":{
+    "Greece":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"GR"
+    },
+    "Greenland":{
+        "ddFormLink":"",
+        "currency": ["DKK","EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GL"
+    },
+    "Grenada":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GD"
+    },
+    "Guadeloupe":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GD"
+    },
+    "Guam":{
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": [" ","Credit Card","Wire"],
+        "iso_2":"GM"
+    },
+    "Guatemala":{
+        //Samoa
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": [" ","Credit Card","Wire"],
+        "iso_2":"GT"
+    },
+    "Guernsey":{
+        "ddFormLink":"",
+        "currency": ["GBP"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"GG"
+    },
+    "Guinea":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GN"
+    },
+    "Guyana":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"GY"
+    },
+    "Heard and McDonald Islands":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"HM"
     },
      "Holy See (Vatican City)":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"VA"
     },
      "Hungary":{
         "ddFormLink":"",

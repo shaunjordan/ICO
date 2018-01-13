@@ -539,357 +539,788 @@
         "paymentMethods": ["Credit Card","Wire"],
         "iso_2":"HM"
     },
-     "Holy See (Vatican City)":{
+    "Holy See (Vatican City)":{
         "ddFormLink":"",
         "currency": ["EUR"],
         "paymentMethods": ["Credit Card","Wire"],
         "iso_2":"VA"
     },
-     "Hungary":{
+    "Honduras":{
+        //samoa
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"HN"
+    },
+    "Hong Kong":{
+        "ddFormLink":"",
+        "currency": ["HKD"],
+        "paymentMethods": ["Check","Credit Card","Wire"],
+        "iso_2":"HK"
+    },
+    "Hungary":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
         "paymentMethods": []
     },
-     "Iceland":{
+    "Iceland":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"HU"
     },
-     "Ireland":{
+    "India":{
+        //samoa
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"IN"
     },
-     "Isle of Man":{
+    "Indonesia":{
+        //samoa
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ID"
+    },
+    "Ireland":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"IE"
+    },
+    "Isle of Man":{
+        "ddFormLink":"",
+        "currency": ["GBP"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"IM"
     },
      "Israel":{
+         //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"IL"
     },
     "Italy":{
         "ddFormLink":"link goes here",
         "currency": ["EUR"],
-        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"]
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"IT"
     },
-     "Jersey":{
+    "Jamaica":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"JM"
+    },
+    "Japan":{
+        //samoa
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"JP"
+    },
+    "Jersey":{
+        "ddFormLink":"",
+        "currency": ["GBP"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"JE"
+    },
+    "Jordan":{
+        "ddFormLink":"",
+        "currency": ["AED","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"JO"
+    },
+    "Kazakhstan":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KZ"
+    },
+    "Kenya":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"KE"
     },
-     "Jordan":{
+    "Kiribati":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KI"
+    },
+    "Kuwait":{
+        "ddFormLink":"",
+        "currency": ["AED","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KW"
+    },
+    "Kyrgyztan":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KG"
+    },
+    "Laos":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"LA"
+    },    
+    "Latvia":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"LV"
+    },
+    "Lebanon":{
+        "ddFormLink":"",
+        "currency": ["AED","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"LB"
+    },
+    "Lesotho":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"LS"
+    },
+    "Libya":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"LY"
+    },
+    "Liechtenstein":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"LI"
+    },
+    "Lithuania":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"LT"
+    },
+    "Luxembourg":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"LU"
+    },
+    "Macao":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MO"
+    },
+    "Macedonia":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MK"
+    },
+    "Madagascar":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MG"
+    },
+    "Malawi":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MW"
+    },
+    "Malaysia":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"MY"
     },
-     "Kazakhstan":{
+    "Maldives":{
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MV"
+    },
+    "Mali":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ML"
+    },
+    "Malta":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"MT"
+    },
+    "Marshall Islands":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MH"
+    },
+    "Martinque":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"MQ"
     },
-     "Kenya":{
+    "Mauritania":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MR"
+    },
+    "Mauritius":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"MU"
     },
-     "Kuwait":{
+    "Mayotte":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"YT"
+    },
+    "Mexico":{
+        //samoa
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": [],
+        "iso_2":"MX"
+    },
+    "Micronesia":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"FM"
+    },
+    "Moldova":{
+        "ddFormLink":"",
+        "currency": ["EUR","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MD"
+    },
+    "Monaco":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"MC"
+    },
+    "Mongolia":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MN"
+    },
+    "Montenegro":{
+        "ddFormLink":"",
+        "currency": ["EUR","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ME"
+    },
+    "Montserrat":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MS"
+    },
+    "Morocco":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"MA"
     },
-     "Kyrgyztan":{
+    "Mozambique":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MZ"
+    },
+    "Namibia":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NA"
     },
-     "Latvia":{
+    "Nepal":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"NP"
+    },
+    "Netherlands":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"NL"
+    },
+    "New Calcedonia":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NC"
     },
-     "Lebanon":{
+    "New Zealand":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NZ"
     },
-     "Lesotho":{
+    "Nicaragua":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NI"
     },
-     "Libya":{
+    "Niger":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"NE"
+    },
+    "Nigeria":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"NG"
+    },
+    "Niue":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NU"
     },
-     "Liechtenstein":{
+    "Norfolk Island":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"NF"
+    },
+    "Northern Mariana Islands":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MP"
+    },
+    "Norway":{
+         //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"NO"
     },
-     "Lithuania":{
+    "Oman":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"OM"
+    },
+    "Pakistan":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"PK"
+    },
+    "Palau":{
+        //samoa
+       "ddFormLink":"",
+       "currency": [],
+       "paymentMethods": [],
+       "iso_2":"PW"
+    },
+    "Pananma":{
+        //samoa
+       "ddFormLink":"",
+       "currency": [],
+       "paymentMethods": [],
+       "iso_2":"PA"
+    },
+    "Papau New Guinea":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PG"
     },
-     "Luxembourg":{
+    "Paraguay":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PY"
     },
-     "Macedonia":{
+    "Peru":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PE"
     },
-     "Madagascar":{
+    "Philippines":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PH"
     },
-     "Malawi":{
+    "Poland":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PL"
     },
-     "Mali":{
+    "Portugal":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"PT"
     },
-     "Malta":{
+    "Puerto Rico":{
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"PR"
+    },
+    "Qatar":{
+        "ddFormLink":"",
+        "currency": ["AED","EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"QA"
+    },
+    "Reunion":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
+        "iso_2":"RE"
+    },
+    "Romania":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"RO"
     },
-     "Mauritania":{
+    "Russian Federation":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"RU"
     },
-     "Mauritius":{
+    "Rwanda":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"RW"
+    },
+    "Saint Barthelemy":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"BL"
     },
-     "Mayotte":{
+    "Saint Kitts and Nevis":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KN"
+    },
+    "Saint Lucia":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"LC"
+    },
+    "Saint Martin (French Part)":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"MF"
+    },
+    "Saint Pierre and Miquelon":{
+        //samoa
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": [],
+        "iso_2":"PM"
+    },
+    "Saint Vincent and Grenadines":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"VC"
+    },
+    "Samoa":{
+        //samoa
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"WS"
+    },
+    "San Marino":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"SM"
+    },
+    "Sao Tome and Principe":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ST"
+    },
+    "Saudi Arabia":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"SA"
     },
-     "Moldova":{
+    "Senegal":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SN"
+    },
+    "Serbia":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"RS"
+    },
+    "Seychelles":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SC"
+    },
+    "Singapore":{
+        "ddFormLink":"",
+        "currency": ["SGD"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"SG"
+    },
+    "Sint Maarten (Dutch Part)":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SX"
+    },
+    "Slovakia":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"SK"
+    },
+    "Slovenia":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"SI"
+    },
+    "South Africa":{
+        "ddFormLink":"",
+        "currency": ["ZAR"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ZA"
+    },
+    "South Korea":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","KRW","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"KR"
+    },
+    "Spain":{
+        "ddFormLink":"",
+        "currency": ["EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"]
+    },
+    "Sri Lanka":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"LK"
     },
-     "Monaco":{
+    "Suriname":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SR"
+    },
+    "Swaziland":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"SZ"
+    },
+    "Sweden":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"SE"
     },
-     "Montenegro":{
+    "Switzerland":{
+        "ddFormLink":"",
+        "currency": ["CHF","EUR"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"CH"
+    },
+    "Taiwan":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"TW"
     },
-     "Morocco":{
+    "Tajikistan":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TJ"
+    },
+    "Tanzania":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"TZ"
     },
-     "Mozambique":{
+    "Tanzania":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"TH"
     },
-     "Namibia":{
+    "Togo":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TG"
+    },
+    "Trinidad and Tobago":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TT"
+    },
+    "Tunisia":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"TN"
     },
-     "Netherlands":{
+    "Turkey":{
+        "ddFormLink":"",
+        "currency": ["EUR","TRY"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TR"
+    },
+    "Turks and Caicos Islands":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"TC"
+    },
+    "Ukraine":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"UA"
     },
-     "Niger":{
+    "United Arab Emirates":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["AED"],
+        "paymentMethods":["Credit Card","Wire"],
+        "iso_2":"AE"
     },
-     "Nigeria":{
+    "United Kingdom":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Norway":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Oman":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Poland":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Portugal":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Qatar":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Reunion":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Romania":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Russian Federation":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Rwanda":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "San Marino":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Sao Tome and Principe":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Saudi Arabia":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Senegal":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Serbia":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Seychelles":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Slovakia":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Slovenia":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "South Africa":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Spain":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Swaziland":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Sweden":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Switzerland":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Tanzania":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Togo":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Tunisia":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Turkey":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "Ukraine":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "United Arab Emirates":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
-    },
-     "United Kingdom":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["GBP"],
+        "paymentMethods": ["Credit Card","Direct Debit","Wire"],
+        "iso_2":"GB"
     },
     "United States":{
         "ddFormLink":"",
-        "currency":[],
-        "paymentMethods":[],
+        "currency": ["USD"],
+        "paymentMethods": ["Check","Credit Card","Direct Debit","Wire"],
         "states": [],
-        "required": true
+        "iso_2":"US"
     },
-     "Uzbekistan":{
+    "Uruguay":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"UY"
     },
-     "Zambia":{
+    "Uzbekistan":{
+        "ddFormLink":"",
+        "currency": ["EUR","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"UZ"
+    },
+    "Venezuela":{
+        //samoa
         "ddFormLink":"",
         "currency": [],
-        "paymentMethods": []
+        "paymentMethods": [],
+        "iso_2":"VE"
     },
-     "Zimbabwe":{
+    "Vietnam":{
         "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": []
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"VN"
+    },
+    "Virgin Islands, British":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"VG"
+    },
+    "Virgin Islands, US":{
+        "ddFormLink":"",
+        "currency": ["USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"VI"
+    },
+    "Zambia":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ZM"
+    },
+    "Zimbabwe":{
+        "ddFormLink":"",
+        "currency": ["EUR","GBP","USD"],
+        "paymentMethods": ["Credit Card","Wire"],
+        "iso_2":"ZW"
     }
 }

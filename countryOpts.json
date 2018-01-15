@@ -1,46 +1,54 @@
 {
-    // blank template
-    //TODO: delete all comments and empty values
-    "paymentOpts": {
-        "option1": []
+    "Standard Pattern":{
+        "description": "standard object pattern for properties of countries",
+        "ddEnabled": "boolean",
+        "ddFormLink":"url link",
+        "currency": ["available currencies"],
+        "paymentMethods": ["available payment method(s)"],
+        "iso_2": "iso 2-character value"
     },
-    "":{
-        "ddFormLink":"",
-        "currency": [],
-        "paymentMethods": [],
-        "iso_2": ""
+    "Pattern Exception":{
+        "description":"modified object pattern where some payment methods only available to specific currencies",
+        "patternException":true,
+        "ddEnabled": "boolean",
+        "ddFormLink":"url link",
+        "currency": ["available currencies"],
+        "paymentMethods": {
+            "Currency":["available payment method(s)"]
+        },
+        "iso_2": "iso 2-character value"
     },
-    // end blank template
     "Aland Islands":{
-        "ddFormLink":""
+        "ddEnabled":false,
+        "ddFormLink":"none",
         "currency": ["EUR"],
         "paymentMethods": ["Credit Card","Direct Debit","Wire"],
-        "iso_2": "AX"
+        "iso_2":"AX"
     },
     "Albania":{
+        "ddEnabled":false,
         "ddFormLink":"none",
         "currency": [" ","EUR","GBP","USD"],
         "paymentMethods": ["Credit Card","Wire"],
-        "iso_2": "AL"
+        "iso_2":"AL"
     },
     "Algeria":{
         "ddFormLink":"",
         "currency": ["EUR","GBP","USD"],
         "paymentMethods": ["Credit Card","Wire"],
-        "iso_2": "DZ"
+        "iso_2":"DZ"
     },
      "American Samoa":{
-         //not all payment methods available for all currencies
-         //set up exception structure for this country
-         //onblur
-         //country = country.value
-         //countryOpts[country].paymentMethods[target];
-        "patternException": true,
-        "ddFormLink":"",
+        "patternException":true,
+        "ddEnabled":false,
+        "ddFormLink":"none",
         "currency": ["AUD","EUR","GBP","NZD","USD"],
         "paymentMethods": {
-            "EUR": ["Credit Card"],
-            "AUD": ["Credit Card", "Wire"]
+            "AUD": ["Credit Card"],
+            "EUR": ["Credit Card","Wire"],
+            "GBP": ["Credit Card","Wire"],
+            "NZD": ["Credit Card"],
+            "USD": ["Credit Card","Wire"]
         }
     },
     "Andorra":{

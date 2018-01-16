@@ -173,31 +173,45 @@
         "iso_2":"BE"
     },
     "Belize":{
-         //Samoa Solution
-        "ddFormLink":"",
-        "currencies": [],
-        "paymentMethods": [],
+        "patternException": true,
+        "ddEnabled": false,
+        "ddFormLink": "none",
+        "currencies": ["BZD","USD"],
+        "paymentMethods": {
+            "BZD": ["Credit Card"],
+            "USD": ["Credit Card","Wire"]
+        },
         "iso_2": "BZ"
     },
     "Benin":{
         "ddFormLink":"",
         "currencies": ["EUR","GBP","USD"],
         "paymentMethods": ["Credit Card","Wire"],
-        "iso_2":"BJ"
+        "iso_2": "BJ"
     },
     "Bermuda":{
-         //Samoa Solution
-        "ddFormLink":"",
-        "currencies": [],
-        "paymentMethods": [],
+        "patternException": true,
+        "ddEnabled": false,
+        "ddFormLink":"none",
+        "currencies": ["BMD","EUR","GBP","USD"],
+        "paymentMethods": {
+            "BMD": ["Credit Card","Wire"],
+            "EUR": ["Credit Card"],
+            "GBP": ["Credit Card"],
+            "USD": ["Credit Card"]
+        },
         "iso_2": "BB"
     },
     "Bolivia":{
-        //Samoa Solution
-        "ddFormLink":"",
-        "currencies": [""],
-        "paymentMethods": [""],
-        "iso_2":"BO"
+        "patternException": true,
+        "ddEnabled": false,
+        "ddFormLink": "none",
+        "currencies": ["EUR","USD"],
+        "paymentMethods": {
+            "EUR": ["Credit Card"],
+            "USD": ["Credit Card", "Wire"]
+        },
+        "iso_2": "BO"
     },
     "Bonaire, Sint Eustatius and Saba":{
         "ddFormLink":"",
@@ -242,10 +256,14 @@
         "iso_2":"BN"
     },
     "Bulgaria":{
-         //Samoa
+        "patternException": true,
+        "ddEnabled": true,
         "ddFormLink":"",
-        "currencies": [],
-        "paymentMethods": [],
+        "currencies": ["BGN","EUR"],
+        "paymentMethods": {
+            "BGN": ["Credit Card"],
+            "EUR": ["Credit Card","Direct Debit","Wire"]
+        },
         "iso_2":"BG"
     },
     "Burkina Faso":{
@@ -298,10 +316,15 @@
         "iso_2":"KY"
     },
     "Chile":{
-        //Samoa
-       "ddFormLink":"",
-       "currencies": [],
-       "paymentMethods": [],
+       "patternException": true,
+       "ddEnabled": false,
+       "ddFormLink":"none",
+       "currencies": ["CLP","EUR","USD"],
+       "paymentMethods": {
+           "CLP": ["Credit Card","Wire"],
+           "EUR": ["Credit Card"],
+           "USD": ["Credit Card","Wire"]
+       },
        "iso_2":"CL"
    },
    "China":{
@@ -323,10 +346,15 @@
         "iso_2":"CC"
     },
     "Colombia":{
-        //Samoa
-        "ddFormLink":"",
-        "currencies": [],
-        "paymentMethods": [],
+        "patternException": true,
+        "ddEnabled": false,
+        "ddFormLink":"none",
+        "currencies": ["COP","EUR","USD"],
+        "paymentMethods": {
+            "COP": ["Credit Card"],
+            "EUR": ["Credit Card"],
+            "USD": ["Credit Card","Wire"]
+        },
         "iso_2":"CO"
     },
     "Congo DR (Zaire)":{
@@ -336,10 +364,17 @@
         "iso_2":"CD"
     },
     "Cook Islands":{
-        //Samoa
-        "ddFormLink":"",
-        "currencies": [],
-        "paymentMethods": [],
+        "patternException": true,
+        "ddEnabled": false,
+        "ddFormLink":"none",
+        "currencies": ["AUD","EUR","GBP","NZD","USD"],
+        "paymentMethods": {
+            "AUD": ["Credit Card"],
+            "EUR": ["Credit Card","Wire"],
+            "GBP": ["Credit Card","Wire"],
+            "NZD": ["Credit Card"],
+            "USD": ["Credit Card","Wire"]
+        },
         "iso_2":"CK"
     },
     "Costa Rica":{
